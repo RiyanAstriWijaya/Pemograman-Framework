@@ -1,0 +1,16 @@
+{
+  "name": "chapter1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "keywords": [],
+  "author": "Riyan",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "mariadb": "^3.3.0"
+  }
+}
