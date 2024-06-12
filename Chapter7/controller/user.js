@@ -2,7 +2,6 @@ const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 const bcrypt = require("bcrypt");
 const { creatToken, decodeToken } = require("../helpers/token");
-
 module.exports = {
   create: async (req, res, next) => {
     try {
