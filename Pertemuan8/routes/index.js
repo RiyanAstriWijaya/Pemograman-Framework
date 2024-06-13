@@ -11,6 +11,7 @@ router.get("/", (req, res) => {
 router.post("/login", auth.login);
 router.get("/saya", auth.saya);
 router.post("/registrasi", auth.registration);
+router.post("/regis", auth.registration);
 router.post("/loginSIMAT", auth.loginSimat);
 router.get("/khusus-mahasiswa", authorization(["mhs"]), (req, res, next) => {
   try {
