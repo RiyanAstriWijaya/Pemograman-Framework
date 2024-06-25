@@ -1,5 +1,5 @@
 -- CreateTable
-CREATE TABLE `User` (
+CREATE TABLE `user` (
     `id` VARCHAR(50) NOT NULL,
     `email` VARCHAR(100) NOT NULL,
     `verified_email` BOOLEAN NOT NULL DEFAULT false,
