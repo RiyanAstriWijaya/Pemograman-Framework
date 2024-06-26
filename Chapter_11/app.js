@@ -1,21 +1,13 @@
+const { name } = require("ejs");
 const express = require("express");
-const { createServer } = require("node:http");
-const { Server } = require("socket.io");
 const app = express();
-const server = createServer(app);
-const io = new Server(server, {
-  cors: {
-    origin: "*",
-  },
+
+app.set("view engine", "ejs");
+
+app.get("/", (req, res) => {
+  res.render("index", { name: "riyan" });
 });
 
-io.on("connection", (socket) => {
-  socket.on("message", (msg) => {
-    console.log(msg);
-  });
-  console.log("user connected");
-});
-
-server.listen(3000, () => {
-  console.log("Server is running on port 3000");
+app.listen(3000, () => {
+  console.log("server is running on port 3000");
 });
