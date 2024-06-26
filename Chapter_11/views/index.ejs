@@ -4,20 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Books</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
   </head>
   <body>
-    <h1>Books</h1>
-    <a href="/add">Add New Book</a>
-    <ul>
-      <% books.forEach(book => { %>
-      <li>
-        <%= book.title %> by <%= book.author %> (<%= new Date(book.published).toDateString() %>)
-        <a href="/edit/<%= book.id %>">Edit</a>
-        <form action="/delete/<%= book.id %>" method="post" style="display: inline">
-          <button type="submit">Delete</button>
-        </form>
-      </li>
-      <% }); %>
-    </ul>
+    <div class="container mt-4">
+      <h1 class="mb-4">Books</h1>
+      <a href="/add" class="btn btn-primary mb-4">Add New Book</a>
+      <ul class="list-group">
+        <% books.forEach(book => { %>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <span><%= book.title %> by <%= book.author %> (<%= new Date(book.published).toDateString() %>)</span>
+          <div>
+            <a href="/edit/<%= book.id %>" class="btn btn-warning btn-sm mr-2">Edit</a>
+            <form action="/delete/<%= book.id %>" method="post" class="d-inline">
+              <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+            </form>
+          </div>
+        </li>
+        <% }); %>
+      </ul>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </body>
 </html>

@@ -4,21 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add Book</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
   </head>
   <body>
-    <h1>Add Book</h1>
-    <form action="/add" method="post">
-      <label for="title">Title:</label>
-      <input type="text" id="title" name="title" required />
-      <br />
-      <label for="author">Author:</label>
-      <input type="text" id="author" name="author" required />
-      <br />
-      <label for="published">Published Date:</label>
-      <input type="date" id="published" name="published" required />
-      <br />
-      <button type="submit">Add Book</button>
-    </form>
-    <a href="/">Back to List</a>
+    <div class="container mt-4">
+      <h1 class="mb-4">Add Book</h1>
+      <form action="/add" method="post">
+        <div class="form-group">
+          <label for="title">Title:</label>
+          <input type="text" id="title" name="title" class="form-control" required />
+        </div>
+        <div class="form-group">
+          <label for="author">Author:</label>
+          <input type="text" id="author" name="author" class="form-control" required />
+        </div>
+        <div class="form-group">
+          <label for="published">Published Date:</label>
+          <input type="date" id="published" name="published" class="form-control" required />
+        </div>
+        <button type="submit" class="btn btn-primary">Add Book</button>
+      </form>
+      <a href="/" class="btn btn-secondary mt-3">Back to List</a>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </body>
 </html>
