@@ -3,9 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Books</title>
   </head>
   <body>
-    <%= name %>
+    <h1>Books</h1>
+    <a href="/add">Add New Book</a>
+    <ul>
+      <% books.forEach(book => { %>
+      <li>
+        <%= book.title %> by <%= book.author %> (<%= new Date(book.published).toDateString() %>)
+        <a href="/edit/<%= book.id %>">Edit</a>
+        <form action="/delete/<%= book.id %>" method="post" style="display: inline">
+          <button type="submit">Delete</button>
+        </form>
+      </li>
+      <% }); %>
+    </ul>
   </body>
 </html>
